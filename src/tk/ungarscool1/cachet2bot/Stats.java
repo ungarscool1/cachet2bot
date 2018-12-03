@@ -13,12 +13,14 @@ public class Stats {
 	private String key;
     private String url;
     private String metricId;
+    private String componentId;
 	
 	public Stats(String[] args) {
 		if (args[0].equalsIgnoreCase("true")) {
             this.key = args[1];
             this.url = args[2]+"/api/v1/";
             this.metricId = args[3];
+            this.componentId = args[4];
         } else {
             return;
         }
@@ -61,7 +63,7 @@ public class Stats {
 		}
 
         try{
-            URL url = new URL(this.url+"components/1");
+            URL url = new URL(this.url+"components/"+this.componentId);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setDoInput(true);
