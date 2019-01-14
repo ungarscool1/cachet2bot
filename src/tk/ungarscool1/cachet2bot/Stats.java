@@ -23,6 +23,8 @@ public class Stats {
             this.url = args[2]+"/api/v1/";
             this.metricId = args[3];
             this.componentId = args[4];
+            // Set User Agent
+            System.setProperty("http.agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36");
         } else {
         	this.active = false;
             return;
